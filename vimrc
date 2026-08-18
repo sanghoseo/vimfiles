@@ -1,6 +1,6 @@
 "===================================================================
-" minimalist(https://github.com/junegunn/vim-plug) download
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim    
+" minimalist download
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " Brief help
 " :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -19,19 +19,20 @@ call plug#begin()
 " You can specify a custom plugin directory by passing it as the argument
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
-
+"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 
 " Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
-
 " Go Plugin
+" go install golang.org/x/tools/gopls@latest
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" go install golang.org/x/tools/cmd/goimports@latest
+" :CocUpdate
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Call plug#end to update &runtimepath and initialize the plugin system.
-" - It automatically executes `filetype plugin indent on` and `syntax enable`
 call plug#end()
 " You can revert the settings after the call like so:
 "   filetype indent off   " Disable file-type-specific indentation
@@ -45,9 +46,9 @@ silent! colorscheme seoul256
 "set background=dark
 set t_Co=256
 set t_ut=
-colorscheme codedark
+"colorscheme codedark
 
-filetype plugin indent on
+"filetype plugin indent on
 
 if has("syntax")
   syntax on
@@ -84,9 +85,8 @@ autocmd BufNewFile *.py colo morning|set ts=2 sw=2
 autocmd BufNewFile *.txt colo evening
 
 " vim-code-dark theme for airline
-let g:airline_theme = 'codedark'
+"let g:airline_theme = 'codedark'
 
 " vim-go
-" go install golang.org/x/tools/cmd/goimports@latest
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
