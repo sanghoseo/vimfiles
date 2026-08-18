@@ -85,3 +85,8 @@ autocmd BufNewFile *.txt colo evening
 
 " vim-code-dark theme for airline
 let g:airline_theme = 'codedark'
+
+ " vim-go
+ " go install golang.org/x/tools/cmd/goimports@latest
+ let g:go_fmt_command = "goimports"
+ let g:go_fmt_autosave = 1
