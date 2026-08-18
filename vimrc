@@ -27,6 +27,9 @@ Plug 'vim-airline/vim-airline'
 " Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 
+" Go Plugin
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Call plug#end to update &runtimepath and initialize the plugin system.
 " - It automatically executes `filetype plugin indent on` and `syntax enable`
 call plug#end()
