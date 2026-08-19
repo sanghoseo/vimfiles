@@ -25,12 +25,16 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 
 " Plug 'morhetz/gruvbox'
-Plug 'tomasiser/vim-code-dark'
+" Plug 'tomasiser/vim-code-dark'
+
 " Go Plugin
-" go install golang.org/x/tools/gopls@latest
+" !go install golang.org/x/tools/gopls@latest
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" go install golang.org/x/tools/cmd/goimports@latest
-" :CocUpdate
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+" !go install golang.org/x/tools/cmd/goimports@latest
+" :CocInstall coc-go
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
